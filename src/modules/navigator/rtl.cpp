@@ -77,6 +77,8 @@ RTL::find_closest_landing_point()
 	double dlon = home_landing_position.lon - global_position.lon;
 	double min_dist_squared = dlat * dlat + dlon * dlon;
 
+	_destination.type = RTL_DESTINATION_HOME;
+
 	if (_navigator->get_mission_start_land_available()) {
 		double mission_landing_lat = _navigator->get_mission_landing_lat();
 		double mission_landing_lon = _navigator->get_mission_landing_lon();
@@ -93,8 +95,6 @@ RTL::find_closest_landing_point()
 			_destination.alt = _navigator->get_mission_landing_alt();
 			_destination.type = RTL_DESTINATION_MISSION_LANDING;
 
-		} else {
-			_destination.type = RTL_DESTINATION_HOME;
 		}
 	}
 

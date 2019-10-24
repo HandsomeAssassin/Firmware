@@ -395,7 +395,7 @@ Mission::find_mission_land_start()
 		}
 
 		// first check for DO_LAND_START marker
-		if (missionitem.nav_cmd == NAV_CMD_DO_LAND_START) {
+		if ((missionitem.nav_cmd == NAV_CMD_DO_LAND_START) && (missionitem_prev.nav_cmd == NAV_CMD_WAYPOINT)) {
 
 			_land_start_available = true;
 			_land_start_index = i;

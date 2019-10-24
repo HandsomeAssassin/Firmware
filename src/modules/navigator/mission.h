@@ -91,8 +91,8 @@ public:
 	bool get_mission_finished() const { return _mission_type == MISSION_TYPE_NONE; }
 	bool get_mission_changed() const { return _mission_changed ; }
 	bool get_mission_waypoints_changed() const { return _mission_waypoints_changed ; }
-	float get_landing_lat() { return _landing_lat; }
-	float get_landing_lon() { return _landing_lon; }
+	double get_landing_lat() { return _landing_lat; }
+	double get_landing_lon() { return _landing_lon; }
 	float get_landing_alt() { return _landing_alt; }
 
 	void set_closest_item_as_current();
